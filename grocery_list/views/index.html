@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <link rel="stylesheet" href="../styles/main.css">
+  <title>Grocery List</title>
+</head>
+<body>
+  <form action="" method="post">
+    <h1>Add an Item</h1>
+    <p>
+      <label for="name">
+      <input type="text" id="name">
+      </label>
+    </p>
+    <p>
+      <label for="quantity">
+        <input type="number" id="quantity">
+      </label>
+    </p>
+    <p>
+    <button type="submit">Add</button>
+    </p>
+  </form>
+  <h1>Groceries</h1>
+  <ul>
+
+  </ul>
+  <script id="list" type="text/x-handlebars">
+    {{#add groceries}}
+      {{>knownQuantity}}
+    {{else}}
+      {{>unknownQuantity}}
+    {{/add}}
+  </script>
+  <script id="knownQuantity" type="text/x-handlebars">
+    <li>{{quantity}} {{name}} </li>
+  </script>
+  <script id="unknownQuantity" type="text/x-handlebars">
+    <li>1 unit of {{name}}</li>
+  </script>
+  <script src="../scripts/app.js"></script>
+</body>
+</html>
