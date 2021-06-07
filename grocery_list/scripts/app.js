@@ -28,10 +28,15 @@ let groceries = [];
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  let item = {};
-  item.name = name.value;
-  item.quantity = quantity.value;
-  groceries.push(item);
-  list.innerHTML = listTemplateFunction({groceries: groceries});
+  if (name.value.trim().length > 0) {
+    let item = {};
+    item.name = name.value;
+    item.quantity = quantity.value;
+    groceries.push(item);
+    list.innerHTML = listTemplateFunction({groceries: groceries});
+    form.reset();
+  } else {
+    return;
+  }
 });
 
