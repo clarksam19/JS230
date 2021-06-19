@@ -38,18 +38,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let form = createOrEditContact.firstElementChild;
     
-    let data = new FormData(form);
+    let data = {};
+    new FormData(form).forEach((value, key) => data[key] = value);
+    
     let request = new XMLHttpRequest();
     
     let method = form.method === 'get' ? 'put' : form.method;
     
     request.open(method, form.action);
-    
+    request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
     request.addEventListener('load', () => {
       getContacts();
     });
 
-    request.send(data);
+    request.send(JSON.stringify(data));
   });
 
   function isType(collection, target) {
