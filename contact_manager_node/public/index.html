@@ -25,10 +25,10 @@
     <h1>You have no contacts</h1>
   </script>
   <script id="searchMessagePartial" type="text/x-handlebars">
-    <p>{{query}} does not match any contacts</p>
+    <h1>"{{query}}" does not match any contacts</h1>
   </script>
   <script id="contactsTemplate" type="text/x-handlebars">
-  {{#if contacts}}
+  {{#if (any contacts)}}
     <h1>Contacts</h1>
     <div>
       {{#each contacts}}
@@ -39,6 +39,18 @@
   {{else}}
     {{>displayMessagePartial}}
     <button class="addContact">Add Contact</button>
+  {{/if}}
+  </script>
+  <script id="searchResultsTemplate" type="text/x-handlebars">
+  {{#if (any results)}}
+    <h1>Contacts</h1>
+    <div>
+      {{#each results}}
+        {{>contactPartial}}
+      {{/each}}
+    </div>
+  {{else}}
+    {{>searchMessagePartial}}
   {{/if}}
   </script>
   <script id="createOrEditContactTemplate" type="text/x-handlebars">
@@ -62,10 +74,11 @@
   </header>
   <div id="searchContacts">
     <button class="addContact">Add Contact</button>
-    <input type="search" name="query" id="search">
+    <input type="search" placeholder="Search">
   </div>
   <div id="contacts" class="active"></div>
   <div id="createOrEditContact" class="hidden"></div>
+  <div id="searchResults" class="hidden"></div>
   <footer>Delevoped by <a href="#">clarksam19.com</a></footer>
   <script src="/javascripts/script.js"></script>
 </body>
