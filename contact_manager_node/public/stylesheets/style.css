@@ -1,7 +1,74 @@
+@import url("./reset.css");
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+header {
+  display: block;
+}
+
+header {
+  text-align: center;
+  
+  padding: 5%;
+  background-color: #6f5499;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 0.75rem;
+  margin-left: 0;
+}
+
+img {
+  height: 15px;
+  width: 15px;
+}
+
+button {
+  color: #6f5499;
+}
+#searchContacts {
+  padding: 2%;
+  background-color: gray;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+
+#contacts div > div {
+  display: inline-block;
+  margin: 5%;
+  text-align: left;
+  border-bottom: 2px solid gray;
+}
+
+#contacts h1 {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.addContact {
+  display: inline-flex;
+  padding: 10px;
+  font-size: 1.5rem;
+}
 .hidden {
   display: none;
 }
 
 .active {
-  display: flex;
+  display: block;
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Contact Manager</title>
   <script src="/javascripts/jquery.js"></script>
   <script src="/javascripts/handlebars.js"></script>
   <link rel="stylesheet" href="/stylesheets/style.css">
@@ -17,8 +17,8 @@
         <p>{{phone_number}}</p>
       <h2>Email</h2>
         <p>{{email}}</p>
-      <button class="edit">Edit</button>
-      <button class="delete">Delete</button>
+      <button class="edit"><img src="images/edit.png" alt="edit"> Edit</button>
+      <button class="delete"><img src="images/delete.png" alt="delete"> Delete</button>
     </div>
   </script>
   <script id="displayMessagePartial" type="text/x-handlebars">
@@ -35,10 +35,8 @@
         {{>contactPartial}}
       {{/each}}
     </div>
-    <button class="addContact">Add Contact</button>
   {{else}}
     {{>displayMessagePartial}}
-    <button class="addContact">Add Contact</button>
   {{/if}}
   </script>
   <script id="searchResultsTemplate" type="text/x-handlebars">
